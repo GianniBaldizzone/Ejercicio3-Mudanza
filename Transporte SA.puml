@@ -1,0 +1,51 @@
+@startuml
+class MedioDeTransporte {
+- double capacidadMaxima
+- double profundidad
+- double Alto
+- double Ancho
+- int cantidadMaximaDeObjetos
++ double getProfundidad()
++ void setProfundidad(double)
++ double getAlto()
++ void setAlto(double)
++ double getAncho()
++ void setAncho(double)
++ double getCapacidadMaxima()
++ void setCapacidadMaxima(double)
++ int getCantidadMaximaDeObjetos()
++ void setCantidadMaximaDeObjetos(int)
+}
+class ObjetoTransportable {
+- double peso
+- double profundidad
+- double Alto
+- double Ancho
+- String esFragil
++ double getAncho()
++ void setAncho(double)
++ double getAlto()
++ void setAlto(double)
++ String getEsFragil()
++ void setEsFragil(String)
++ double getProfundidad()
++ void setProfundidad(double)
++ double getPeso()
++ void setPeso(double)
+}
+class Main {
++ {static} void main(String[])
+}
+class Silla {
+- int cantidadDePatas
+}
+class PACKAGE_NAME.Dimension {
+}
+class Televisor {
+- String estaEmpaquetada
+}
+
+
+ObjetoTransportable <|-- Silla
+ObjetoTransportable <|-- Televisor
+@enduml
