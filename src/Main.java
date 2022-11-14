@@ -7,13 +7,16 @@ public static void main(String[]args){
             3
     );
 
-    ObjetoTransportable silla = new ObjetoTransportable(5,
+    ObjetoTransportable silla = new ObjetoTransportable(4,
             new Dimension(1,1,1),
             false,
             "Silla gamer");
-    ObjetoTransportable televisor = new ObjetoTransportable(10,
+    ObjetoTransportable televisorViejo = new ObjetoTransportable(10,
             new Dimension(1.5,1.5,1.5),
             true,
             "TV SONY 45 pulgadas");
+
+    camionDisponible.cargar(silla);
+    camionDisponible.cargar(televisorViejo);
 }
 }

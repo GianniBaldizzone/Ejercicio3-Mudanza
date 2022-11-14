@@ -55,4 +55,12 @@ private int CapacidadMaximaDeObjetos;
     public void setCapacidadMaximaDeObjetos(int capacidadMaximaDeObjetos) {
         CapacidadMaximaDeObjetos = capacidadMaximaDeObjetos;
     }
+
+    public void cargar(ObjetoTransportable objetoTransportable) {
+        if (getTrasportables().size() >= getCapacidadMaximaDeObjetos()) return;
+        getTrasportables().add(objetoTransportable);
+        System.out.println("su objeto"+this.getTrasportables()+ "transportable se cargo con exito");
+
+
+    }
 }
