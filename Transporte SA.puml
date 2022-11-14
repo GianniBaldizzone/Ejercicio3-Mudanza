@@ -1,37 +1,34 @@
 @startuml
 class MedioDeTransporte {
+- ArrayList<ObjetoTransportable> trasportables
 - double capacidadMaxima
-- double profundidad
-- double Alto
-- double Ancho
-- int cantidadMaximaDeObjetos
-+ double getProfundidad()
-+ void setProfundidad(double)
-+ double getAlto()
-+ void setAlto(double)
-+ double getAncho()
-+ void setAncho(double)
+- double capacidadActual
+- Dimension dimensiones
+- int CapacidadMaximaDeObjetos
++ ArrayList<ObjetoTransportable> getTrasportables()
++ void setTrasportables(ArrayList<ObjetoTransportable>)
 + double getCapacidadMaxima()
 + void setCapacidadMaxima(double)
-+ int getCantidadMaximaDeObjetos()
-+ void setCantidadMaximaDeObjetos(int)
++ double getCapacidadActual()
++ void setCapacidadActual(double)
++ Dimension getDimensiones()
++ void setDimensiones(Dimension)
++ int getCapacidadMaximaDeObjetos()
++ void setCapacidadMaximaDeObjetos(int)
 }
 class ObjetoTransportable {
 - double peso
-- double profundidad
-- double Alto
-- double Ancho
-- String esFragil
-+ double getAncho()
-+ void setAncho(double)
-+ double getAlto()
-+ void setAlto(double)
-+ String getEsFragil()
-+ void setEsFragil(String)
-+ double getProfundidad()
-+ void setProfundidad(double)
+- Dimension dimensiones
+- Boolean esFragil
+- String nombre
 + double getPeso()
 + void setPeso(double)
++ Dimension getDimensiones()
++ void setDimensiones(Dimension)
++ Boolean getEsFragil()
++ void setEsFragil(Boolean)
++ String getNombre()
++ void setNombre(String)
 }
 class Main {
 + {static} void main(String[])
@@ -39,7 +36,16 @@ class Main {
 class Silla {
 - int cantidadDePatas
 }
-class PACKAGE_NAME.Dimension {
+class Dimension {
+- double profundidad
+- double alto
+- double ancho
++ double getProfundidad()
++ void setProfundidad(double)
++ double getAlto()
++ void setAlto(double)
++ double getAncho()
++ void setAncho(double)
 }
 class Televisor {
 - String estaEmpaquetada
