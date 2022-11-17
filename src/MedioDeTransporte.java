@@ -1,14 +1,24 @@
 import java.util.ArrayList;
 public class MedioDeTransporte {
 
-
     private ArrayList<ObjetoTransportable> trasportables;
 private double capacidadMaxima;
 private double capacidadActual;
 private Dimension dimensiones;
 private int CapacidadMaximaDeObjetos;
 
-    public MedioDeTransporte( double capacidadMaxima, Dimension dimensiones, int capacidadMaximaDeObjetos) {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    private String nombre;
+
+    public MedioDeTransporte( String nombre ,double capacidadMaxima, Dimension dimensiones, int capacidadMaximaDeObjetos) {
+       setNombre(nombre);
        setTrasportables(new ArrayList<ObjetoTransportable>(0));
        setCapacidadActual(0);
        setCapacidadMaxima(capacidadMaxima);
@@ -57,10 +67,26 @@ private int CapacidadMaximaDeObjetos;
     }
 
     public void cargar(ObjetoTransportable objetoTransportable) {
-        if (getTrasportables().size() >= getCapacidadMaximaDeObjetos()) return;
-        getTrasportables().add(objetoTransportable);
-        System.out.println("su objeto"+this.getTrasportables()+ "transportable se cargo con exito");
 
+        if (this.getCapacidadActual() + objetoTransportable.getPeso()< getCapacidadMaximaDeObjetos()) {
+            this.capacidadActual = capacidadActual + objetoTransportable.getPeso();
+            getTrasportables().add(objetoTransportable);
+            System.out.println("su objeto transportable " + objetoTransportable.getNombre() + " se cargo con exito");
+
+        }else{
+            System.out.println("Ha superado la capacidad maxima del "+ this.getNombre()+" no se ha podido sumar ese objeto");
+        }
+        }
+
+        public void descargar(ObjetoTransportable objetoTransportable){
+            if (this.getCapacidadActual() + objetoTransportable.getPeso() <= getCapacidadMaximaDeObjetos() && this.getCapacidadActual() + objetoTransportable.getPeso() !=0) {
+                this.capacidadActual = capacidadActual - objetoTransportable.getPeso();
+                getTrasportables().remove(objetoTransportable);
+                System.out.println("su objeto" + objetoTransportable.getNombre() + "transportable ha sido descargado con exito");
+            }else{
+                System.out.println("No se ha podido descargar con exito");
+            }
+        }
 
     }
-}
+

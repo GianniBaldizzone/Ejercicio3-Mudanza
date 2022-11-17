@@ -4,7 +4,7 @@ public class ObjetoTransportable {
     private Boolean esFragil;
     private String nombre;
 
-    public ObjetoTransportable(double peso, Dimension dimensiones, Boolean esFragil, String name) {
+    public ObjetoTransportable(double peso, Dimension dimensiones, Boolean esFragil, String nombre) {
         setPeso(peso);
         setDimensiones(dimensiones);
        setEsFragil(esFragil);
